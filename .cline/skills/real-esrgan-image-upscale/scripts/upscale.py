@@ -25,8 +25,9 @@ from pathlib import Path
 
 REAL_ESRGAN_VERSION = "v0.2.5.0"
 REAL_ESRGAN_BUILD = "20220424"
-FOLDER = Path("binary/realesrgan-ncnn-vulkan")
-
+BASE_DIR = Path(__file__).resolve().parent
+FOLDER = BASE_DIR / "binary" / "realesrgan-ncnn-vulkan"
+# FOLDER = Path("binary/realesrgan-ncnn-vulkan")
 
 def safe_extract(zip_ref, path):
     for member in zip_ref.infolist():
@@ -82,7 +83,7 @@ def main():
     if not FOLDER.exists():
         print("Downloading Real-ESRGAN...")
         FOLDER.parent.mkdir(parents=True, exist_ok=True)
-        zip_path = Path("realesrgan.zip")
+        zip_path = FOLDER.parent / "realesrgan.zip"
 
         try:
             with urllib.request.urlopen(ZIP_URL) as response, open(zip_path, "wb") as out_file:

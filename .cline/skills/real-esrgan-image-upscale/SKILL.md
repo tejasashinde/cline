@@ -1,5 +1,5 @@
 ---
-name: real-esrgan
+name: real-esrgan-image-upscale
 description: "Use this skill whenever the user wants to upscale, enhance, or improve the resolution and quality of images. This includes increasing image size without losing detail, restoring compressed or blurry images, enhancing anime or photo images, batch upscaling, and improving image clarity for print or digital use. It uses the portable NCNN Vulkan build of Real-ESRGAN, automatically downloads the correct OS version if missing, runs fully offline after the first download, requires Python and leverages Vulkan GPU acceleration when available (falling back to CPU if not)."
 ---
 
